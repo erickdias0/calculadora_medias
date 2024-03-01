@@ -12,8 +12,8 @@ let somaNotas = 0
 const atividades = [] 
 
 form.addEventListener('submit', function(e){
+    console.log('chegou')
     e.preventDefault()
-    //Verifica Duplicidade
     if(atividades.includes(nomeAtividade.value)){
         alert(nomeAtividade.value + ' já foi inserida')
         return
