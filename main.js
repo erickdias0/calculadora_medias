@@ -12,7 +12,6 @@ let somaNotas = 0
 const atividades = [] 
 
 form.addEventListener('submit', function(e){
-    console.log('chegou')
     e.preventDefault()
     if(atividades.includes(nomeAtividade.value)){
         alert(nomeAtividade.value + ' já foi inserida')
@@ -20,6 +19,7 @@ form.addEventListener('submit', function(e){
     } else{
         atividades.push(nomeAtividade.value)
     }
+
     incluiAtividade()
     incluiMedia()
     limpaInputs()
@@ -42,6 +42,9 @@ function incluiAtividade(){
 
 function incluiMedia(){
     quantAtividades++
+    if(quantAtividades===1) {
+        document.getElementById('media-table').style.visibility = 'visible'
+    }
     somaNotas += parseFloat(nota.value)
     const media = somaNotas/quantAtividades
     document.getElementById('media-final').innerHTML = `${(media).toFixed(2)}`

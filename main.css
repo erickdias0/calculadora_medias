@@ -94,3 +94,8 @@ table td img{
     background-color: red;
 }
 
+#media-table{
+    font-weight: bold;
+    visibility: hidden;
+}
+
